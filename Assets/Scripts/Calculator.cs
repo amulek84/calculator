@@ -39,7 +39,8 @@ public class Calculator : MonoBehaviour
             || this.input.text.Length == 1 && !this.input.text.Equals("0")
             || this.input.text.Length > 1 && !this.input.text[0].Equals('-') && !this.input.text[1].Equals('0')
             || this.input.text.Length > 2 && this.input.text[0].Equals('-') && this.input.text[1].Equals('0')
-            || this.input.text.Length > 1 && this.input.text[0].Equals('-') && !this.input.text[1].Equals('0'))) {
+            || this.input.text.Length > 1 && this.input.text[0].Equals('-') && !this.input.text[1].Equals('0')
+            || this.input.text.Length > 1 && !this.input.text[0].Equals('-') && !this.input.text[0].Equals('0'))) {
             this.input.text += character;
         } else if(this.input.text.Length > 0 && character.Equals(",") 
             && !this.input.text.Contains(",")){
