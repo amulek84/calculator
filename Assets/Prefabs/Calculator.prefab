@@ -124,7 +124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 72942744}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -408,7 +408,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 116768690}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -558,7 +558,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 199128998}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: clearAll
+        m_MethodName: ClearAll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1378,7 +1378,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 521103992}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1662,7 +1662,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 726751631}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1812,7 +1812,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 729826144}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2096,7 +2096,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 810058922}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2648,7 +2648,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 898908565}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2798,7 +2798,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 944290791}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2948,7 +2948,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1018743689}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3098,7 +3098,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1031255194}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3248,7 +3248,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1094731486}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3532,7 +3532,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1368526478}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: equels
+        m_MethodName: Equels
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3816,7 +3816,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1526938493}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3966,7 +3966,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1565565256}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: negativePositive
+        m_MethodName: NegativePositive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4518,7 +4518,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1676044139}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4668,7 +4668,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1732690800}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4818,7 +4818,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1778866796}
         m_TargetAssemblyTypeName: Calculator, Assembly-CSharp
-        m_MethodName: inputBtn
+        m_MethodName: InputBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

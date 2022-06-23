@@ -16,59 +16,64 @@ public class Calculator : MonoBehaviour
     private char[] operators = {'+', '-', 'x', '÷'};
     List<string> expression = new List<string>();
     
-    public void inputBtn(){
-        if(this.output.text.Contains("=") || this.output.text == "Делить на ноль невозможно"){
-            this.history.text += this.output.text+"\n";
-            this.clearInput();
-            this.clearOutput();
+    public void InputBtn(){
+        if(output.text.Contains("=") || output.text == "Делить на ноль невозможно"){
+            history.text += output.text+"\n";
+            ClearInput();
+            ClearOutput();
         }
-        if(this.input.text.Length > 0 && !this.input.text[this.input.text.Length-1].Equals(',')
+        if(output.text.Length > 0 && input.text.Length == 0 && (character.Equals("+") || character.Equals("-") 
+            || character.Equals("x") || character.Equals("÷"))){
+            output.text = output.text.Substring(0, output.text.Length - 1);
+            output.text += character;
+        }
+        if(input.text.Length > 0 && !input.text[input.text.Length-1].Equals(',')
             && (character.Equals("+") || character.Equals("-") 
             || character.Equals("x") || character.Equals("÷"))) {
-            if(this.input.text.Contains("-")){
-                this.input.text = "(" + this.input.text + ")";
+            if(input.text.Contains("-")){
+                input.text = "(" + input.text + ")";
             }
-            this.input.text += character;
-            this.output.text += this.input.text;
-            this.clearInput();
+            input.text += character;
+            output.text += input.text;
+            ClearInput();
         } else if(!character.Equals("+") && !character.Equals("-") 
             && !character.Equals("x") && !character.Equals("÷") 
             && !character.Equals(",") 
-            && (this.input.text.Length == 0
-            || this.input.text.Length == 1 && this.input.text.Equals("0") && float.Parse(character) > 9
-            || this.input.text.Length == 1 && !this.input.text.Equals("0")
-            || this.input.text.Length > 1 && !this.input.text[0].Equals('-') && !this.input.text[1].Equals('0')
-            || this.input.text.Length > 2 && this.input.text[0].Equals('-') && this.input.text[1].Equals('0')
-            || this.input.text.Length > 1 && this.input.text[0].Equals('-') && !this.input.text[1].Equals('0')
-            || this.input.text.Length > 1 && !this.input.text[0].Equals('-') && !this.input.text[0].Equals('0'))) {
-            this.input.text += character;
-        } else if(this.input.text.Length > 0 && character.Equals(",") 
-            && !this.input.text.Contains(",")){
-            this.input.text += character;
+            && (input.text.Length == 0
+            || input.text.Length == 1 && input.text.Equals("0") && float.Parse(character) > 9
+            || input.text.Length == 1 && !input.text.Equals("0")
+            || input.text.Length > 1 && !input.text[0].Equals('-') && !input.text[1].Equals('0')
+            || input.text.Length > 2 && input.text[0].Equals('-') && input.text[1].Equals('0')
+            || input.text.Length > 1 && input.text[0].Equals('-') && !input.text[1].Equals('0')
+            || input.text.Length > 1 && !input.text[0].Equals('-') && !input.text[0].Equals('0'))) {
+            input.text += character;
+        } else if(input.text.Length > 0 && character.Equals(",") 
+            && !input.text.Contains(",")){
+            input.text += character;
         }
     }
 
-    public void negativePositive(){
-        if(this.input.text.Length > 0 && this.input.text[0].Equals('-')) {
-            this.input.text = this.input.text.Replace("-", "");
-        } else if(this.input.text.Length > 0) {
-            this.input.text = "-" + this.input.text;
+    public void NegativePositive(){
+        if(input.text.Length > 0 && input.text[0].Equals('-')) {
+            input.text = input.text.Replace("-", "");
+        } else if(input.text.Length > 0) {
+            input.text = "-" + input.text;
         }
     }
 
-    public void equels(){
-        if(this.output.text.Length > 0 && !this.output.text.Contains("=") 
-            && this.input.text.Length > 0 && !this.input.text[this.input.text.Length-1].Equals(',')){
-            if(this.input.text.Contains("-")){
-                this.input.text = "(" + this.input.text + ")";
+    public void Equels(){
+        if(output.text.Length > 0 && !output.text.Contains("=") 
+            && input.text.Length > 0 && !input.text[input.text.Length-1].Equals(',')){
+            if(input.text.Contains("-")){
+                input.text = "(" + input.text + ")";
             }
-            this.output.text += this.input.text + character;
-            this.getResult(this.output.text);
-            this.clearInput();
+            output.text += input.text + character;
+            GetResult(output.text);
+            ClearInput();
         }
     }
 
-    public void getResult(string math){
+    public void GetResult(string math){
         math = math.Replace("=", "");
         math = math.Replace("(-", "—");
         math = math.Replace(")", "");
@@ -80,57 +85,57 @@ public class Calculator : MonoBehaviour
         var posMath = 0;
         foreach(var number in numbers){
             if((posExpress+1)%2 == 0){
-                this.expression.Add(math[posMath].ToString());
+                expression.Add(math[posMath].ToString());
                 posExpress++;
                 posMath++;
             }
-            this.expression.Add(number);
+            expression.Add(number);
             posExpress++;
         }
-        doOperation("x");
-        doOperation("÷");
-        if(this.zero){
-            this.clearInput();
-            this.clearOutput();
-            this.output.text = "Делить на ноль невозможно";
-            this.zero = false;
+        DoOperation("x");
+        DoOperation("÷");
+        if(zero){
+            ClearInput();
+            ClearOutput();
+            output.text = "Делить на ноль невозможно";
+            zero = false;
         } else {
-            doOperation("+");
-            doOperation("-");
-            this.output.text += this.expression[0];
+            DoOperation("+");
+            DoOperation("-");
+            output.text += expression[0];
         }
-        this.expression.Clear();
+        expression.Clear();
     }
 
-    private void doOperation(string mathOperator){
-        for(int i = 0; i < this.expression.Count; i++){            
-            if(this.expression[i].Equals(mathOperator)){
+    private void DoOperation(string mathOperator){
+        for(int i = 0; i < expression.Count; i++){            
+            if(expression[i].Equals(mathOperator)){
                 if(mathOperator.Equals("x")){
-                    result = float.Parse(this.expression[i-1].Replace("—", "-"))*float.Parse(this.expression[i+1].Replace("—", "-"));
-                    this.expression[i-1] = result.ToString();
+                    result = float.Parse(expression[i-1].Replace("—", "-"))*float.Parse(expression[i+1].Replace("—", "-"));
+                    expression[i-1] = result.ToString();
                 }
                 if(mathOperator.Equals("÷")){
-                    if(float.Parse(this.expression[i+1].Replace("—", "-")) == 0){
-                        this.zero = true;
+                    if(float.Parse(expression[i+1].Replace("—", "-")) == 0){
+                        zero = true;
                         break;
                     }
-                    result = float.Parse(this.expression[i-1].Replace("—", "-"))/float.Parse(this.expression[i+1].Replace("—", "-"));
-                    this.expression[i-1] = result.ToString();
+                    result = float.Parse(expression[i-1].Replace("—", "-"))/float.Parse(expression[i+1].Replace("—", "-"));
+                    expression[i-1] = result.ToString();
                 }
                 if(mathOperator.Equals("+")){
-                    result = float.Parse(this.expression[i-1].Replace("—", "-"))+float.Parse(this.expression[i+1].Replace("—", "-"));
-                    this.expression[i-1] = result.ToString();
+                    result = float.Parse(expression[i-1].Replace("—", "-"))+float.Parse(expression[i+1].Replace("—", "-"));
+                    expression[i-1] = result.ToString();
                 }
                 if(mathOperator.Equals("-")){
-                    result = float.Parse(this.expression[i-1].Replace("—", "-"))-float.Parse(this.expression[i+1].Replace("—", "-"));
-                    this.expression[i-1] = result.ToString();
+                    result = float.Parse(expression[i-1].Replace("—", "-"))-float.Parse(expression[i+1].Replace("—", "-"));
+                    expression[i-1] = result.ToString();
                 }
 
-                this.expression.RemoveAt(i+1);
-                this.expression.RemoveAt(i);
+                expression.RemoveAt(i+1);
+                expression.RemoveAt(i);
 
-                if(this.expression.Count == 1) {
-                    this.expression[0] = result.ToString();
+                if(expression.Count == 1) {
+                    expression[0] = result.ToString();
                     break;
                 }
                 i = 0;
@@ -138,21 +143,21 @@ public class Calculator : MonoBehaviour
         }
     }
 
-    public void clearAll(){
-        this.clearInput();
-        this.clearOutput();
-        clearHistory();
+    public void ClearAll(){
+        ClearInput();
+        ClearOutput();
+        ClearHistory();
     }
 
-    private void clearHistory(){
-        this.history.text = "";
+    private void ClearHistory(){
+        history.text = "";
     }
 
-    private void clearInput(){
-        this.input.text = "";
+    private void ClearInput(){
+        input.text = "";
     }
 
-    private void clearOutput(){
-        this.output.text = "";
+    private void ClearOutput(){
+        output.text = "";
     }
 }
